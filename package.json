@@ -3,15 +3,16 @@
   "scripts": {
     "build": "vite build",
     "dev": "nodemon src/server/index.js",
-    "unx:start": "NODE_ENV=production node src/server/index.js",
-    "win:start:": "SET NODE_ENV=production&& node src/server/index.js",
-    "pm2:start": "NODE_ENV=production pm2 start src/server/index.js -n moments-poster",
-    "pm2:logs": "pm2 logs moments-poster --lines 100"
+    "start": "cross-env NODE_ENV=production node src/server/index.js",
+    "pm2:s": "cross-env NODE_ENV=production pm2 start src/server/index.js -n moments-poster",
+    "pm2:l": "pm2 logs moments-poster --lines 100",
+    "pm2:d": "pm2 delete moments-poster"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
     "color": "^4.2.3",
+    "cross-env": "^7.0.3",
     "express": "^4.18.2",
     "file-type": "^18.5.0",
     "got": "^13.0.0",
