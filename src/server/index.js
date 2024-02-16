@@ -14,6 +14,7 @@ class CustomError extends Error {
 }
 
 const app = express()
+app.use("images", express.static("images"))
 app.use(express.text({ type: "text/url", limit: "8kb" }))
 
 app.use((err, req, res, next) => {
@@ -66,7 +67,7 @@ app.post("/upload", async (req, res, next) => {
           fit: "contain",
           background: "#222"
         })
-        .toFile("dist/images/" + fileName)
+        .toFile("images/" + fileName)
       return res.status(200).send({ file: fileName })
     } catch (e) {
       return next(new CustomError("Failed to process Image."))

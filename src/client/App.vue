@@ -69,9 +69,7 @@ function uploadImg() {
     try {
       response = JSON.parse(xhr.responseText)
     } catch (error) {
-      response = {
-        error: "Something went wrong while communicating with server."
-      }
+      response = { error: error.message }
     }
     checkResponse(response)
   }
