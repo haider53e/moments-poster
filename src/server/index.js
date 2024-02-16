@@ -92,6 +92,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3002
 
-const server = app.listen(PORT, () => console.log("listening on port " + PORT))
-
-ViteExpress.bind(app, server)
+ViteExpress.listen(app, PORT, () =>
+  console.log("server started: http://localhost:" + PORT)
+)
