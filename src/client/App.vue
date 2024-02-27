@@ -136,7 +136,9 @@ function share() {
                     :value="true"
                     v-model="isFile"
                   />
-                  <label class="cursor-pointer" for="radio1">File</label>
+                  <label class="cursor-pointer no-select" for="radio1"
+                    >File</label
+                  >
                   <input
                     class="accent cursor-pointer"
                     type="radio"
@@ -144,7 +146,9 @@ function share() {
                     :value="false"
                     v-model="isFile"
                   />
-                  <label class="cursor-pointer" for="radio2">URL</label>
+                  <label class="cursor-pointer no-select" for="radio2"
+                    >URL</label
+                  >
                 </div>
                 <input
                   v-if="isFile"

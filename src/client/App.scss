@@ -51,6 +51,10 @@ html.focused ::selection {
   cursor: pointer;
 }
 
+.no-select {
+  user-select: none;
+}
+
 .loading {
   animation-timing-function: linear;
   animation-name: loading;
@@ -98,10 +102,10 @@ html.focused ::selection {
   --bs-btn-hover-color: white;
   --bs-btn-hover-bg: var(--theme);
   --bs-btn-hover-border-color: var(--theme);
-  --bs-btn-focus-shadow-rgb: transparent;
   --bs-btn-active-color: white;
   --bs-btn-active-bg: var(--theme);
   --bs-btn-active-border-color: var(--theme);
+  --bs-btn-focus-shadow-rgb: transparent;
 }
 
 .text-accent {

@@ -1,8 +1,8 @@
 <template>
   <div class="header1 navbar">
-    <div class="container-fluid justify-content-start">
+    <div class="container-fluid justify-content-center">
       <div class="header2">
-        <a class="header3 text-accent"> Moments Poster </a>
+        <span class="header3 text-accent">Moments Poster</span>
       </div>
     </div>
   </div>
@@ -19,6 +19,5 @@
 .header3 {
   font-size: 20px;
   text-decoration: none;
-  cursor: pointer;
 }
 </style>
