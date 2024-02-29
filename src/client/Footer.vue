@@ -1,9 +1,9 @@
 <template>
-  <div class="footer1 navbar">
+  <footer class="footer1 navbar">
     <div class="footer2 container-fluid">
       <div class="footer3">
         <a
-          class="text-accent"
+          class="text-accent d-flex"
           target="_blank"
           rel="noopener noreferrer"
           href="https://ueso.000webhostapp.com/github-redirect/repo/706103540"
@@ -22,7 +22,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style scoped>

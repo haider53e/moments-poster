@@ -1,11 +1,11 @@
 <template>
-  <div class="header1 navbar">
+  <header class="header1 navbar">
     <div class="container-fluid justify-content-center">
       <div class="header2">
         <span class="header3 text-accent">Moments Poster</span>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <style scoped>

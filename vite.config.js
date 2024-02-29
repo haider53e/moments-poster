@@ -1,8 +1,6 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-
-const stringer = (target) =>
-  typeof target === "string" ? "\"" + target + "\"" : target
+import makeString from "./src/server/utils/makeString"
 
 const base = ["/", "/moments_poster/"][0]
 
@@ -11,5 +9,5 @@ export default defineConfig({
   base,
   plugins: [vue()],
   build: { target: "es6" },
-  define: { BASE: stringer(base) }
+  define: { BASE: makeString(base) }
 })

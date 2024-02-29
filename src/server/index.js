@@ -5,6 +5,7 @@ import ViteExpress from "vite-express"
 import sharp from "sharp"
 import { fileTypeFromBuffer } from "file-type"
 import validUrl from "valid-url"
+import getViteConfig from "./utils/getViteConfig.js"
 
 class CustomError extends Error {
   constructor(message = "Unable to process your request.", status = 500) {
@@ -13,7 +14,7 @@ class CustomError extends Error {
   }
 }
 
-const app = express()
+const app = express.Router()
 app.use("/images", express.static("images"))
 app.use(express.text({ type: "text/url", limit: "8kb" }))
 
@@ -90,8 +91,11 @@ app.use((err, req, res, next) => {
     res.status(err.status).send({ error: err.message })
 })
 
+const server = express()
+server.use((await getViteConfig()).base, app)
+
 const PORT = process.env.PORT || 3002
 
-ViteExpress.listen(app, PORT, () =>
+ViteExpress.listen(server, PORT, () =>
   console.log("server started: http://localhost:" + PORT)
 )

@@ -2,7 +2,22 @@
 
 @font-face {
   font-family: "Instagram Sans";
-  src: url("/instagramsans.ttf");
+  src: url("/instagram-sans.ttf");
+}
+
+:focus-visible {
+  outline-offset: 3px;
+  outline-color: var(--theme);
+}
+
+footer{
+  :focus-visible {
+    border-radius: 20%;
+    outline-width: 2px;
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-color: var(--theme);
+  }
 }
 
 html,
@@ -56,12 +71,9 @@ html.focused ::selection {
 }
 
 .loading {
-  animation-timing-function: linear;
-  animation-name: loading;
-  animation-iteration-count: infinite;
-  animation-duration: 0.75s;
-  height: 30px;
   width: 30px;
+  height: 30px;
+  animation: loading linear infinite 0.75s;
 }
 
 .loading > :first-child {

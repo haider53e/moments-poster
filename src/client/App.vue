@@ -26,7 +26,7 @@ async function fetchImg() {
 
   let response
   try {
-    response = await fetch("/upload", {
+    response = await fetch(BASE + "upload", {
       method: "POST",
       headers: { "Content-Type": "text/url" },
       body: URLInput.value
@@ -56,7 +56,7 @@ function uploadImg() {
 
   step.value = 2
   const xhr = new XMLHttpRequest()
-  xhr.open("POST", "/upload")
+  xhr.open("POST", BASE + "upload")
 
   xhr.upload.onprogress = ({ loaded, total }) => {
     const value = Math.round((loaded / total) * 100)
@@ -135,6 +135,7 @@ function share() {
                     id="radio1"
                     :value="true"
                     v-model="isFile"
+                    @keydown="(e) => e.key === 'Enter' && (isFile = true)"
                   />
                   <label class="cursor-pointer no-select" for="radio1"
                     >File</label
@@ -145,6 +146,7 @@ function share() {
                     id="radio2"
                     :value="false"
                     v-model="isFile"
+                    @keydown="(e) => e.key === 'Enter' && (isFile = false)"
                   />
                   <label class="cursor-pointer no-select" for="radio2"
                     >URL</label
